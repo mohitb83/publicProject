@@ -17,7 +17,7 @@ import com.util.pack.TimeOuts;
 public class BaseClass {
 	
 	protected Properties prop;
-	protected WebDriver driver;
+	public WebDriver driver;
 	static String browser1 = "chrome"; 
 	static String browser2 = "firefox";
 	static String browser3 = "edge";
@@ -40,21 +40,21 @@ public class BaseClass {
 	
 	public void setUp(String browser) {
 		
-		if(browser.equals(browser1)) {
+		if(browser.equalsIgnoreCase(browser1)) {
 			ChromeOptions opts = new ChromeOptions();
 			opts.setAcceptInsecureCerts(true);
 			driver = new ChromeDriver(opts);
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(time.page_load_time));
-		} else if(browser.equals(browser2)) {
+		} else if(browser.equalsIgnoreCase(browser2)) {
 			FirefoxOptions opts = new FirefoxOptions();
 			opts.setAcceptInsecureCerts(true);
 			driver = new FirefoxDriver(opts);
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(time.page_load_time));
-		}else if (browser.equals(browser3)){
+		}else if (browser.equalsIgnoreCase(browser3)){
 			EdgeOptions opts = new EdgeOptions();
 			opts.setAcceptInsecureCerts(true);
 			driver = new EdgeDriver(opts);
@@ -65,5 +65,8 @@ public class BaseClass {
 		else {
 			System.out.println("No browser found");
 		}
+	}
+	public WebDriver getDriver() {
+		return driver;
 	}
 }
