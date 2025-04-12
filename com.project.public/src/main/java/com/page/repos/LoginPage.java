@@ -28,9 +28,4 @@ public class LoginPage {
 	public void clickLoginBtn() {
 		driver.findElement(clickLogin).click();
 	}
-	
-	
-	
-	
-
 }
