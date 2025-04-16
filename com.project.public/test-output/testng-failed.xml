@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tests.pack.LoginTest">
+      <class name="com.tests.pack.DifferentElements">
         <methods>
-          <include name="testLogin"/>
+          <include name="fill_N_SubmitForm"/>
+          <include name="launchBrowser"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.tests.pack.LoginTest -->
+      </class> <!-- com.tests.pack.DifferentElements -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

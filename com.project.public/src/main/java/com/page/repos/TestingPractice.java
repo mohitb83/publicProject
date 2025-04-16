@@ -24,7 +24,14 @@ public class TestingPractice {
 	public By check3 = By.id("wednesday");
 	public By check4 = By.id("thursday");
 	public By check5 = By.id("friday");
+	public By countyrDdown = By.id("country");
 	public By selectCountry = By.id("country");
+	public By colorsDdown = By.id("colors");
+	public By animalsDdown = By.id("animals");
+	public By datePicker1 = By.id("datepicker");
+	public By datePicker2 = By.id("txtDate");
+	public By dateStart = By.id("start-date");
+	public By dateEnd = By.id("end-date");
 	// public By countryValue = By.cssSelector("[value='india']");
 	public By submit = By.cssSelector("button.submit-btn");
 
@@ -73,6 +80,36 @@ public class TestingPractice {
 	public void selectCountry(String myCountry) {
 		Select select = new Select(driver.findElement(selectCountry));
 		select.selectByValue(myCountry);
+	}
+	
+	public void selectColor(String color) {
+		Select select = new Select(driver.findElement(selectCountry));
+		select.selectByValue(color);
+	}
+	
+	public void selectAnimals(String animal) {
+		Select select = new Select(driver.findElement(selectCountry));
+		select.selectByValue(animal);
+	}
+	
+	public void addDate1(String date1) {
+		WebElement elem = driver.findElement(datePicker1);
+		elem.sendKeys(date1);
+	}
+	
+	public void addDate2(String date2) {
+		WebElement elem = driver.findElement(datePicker2);
+		elem.sendKeys(date2);
+	}
+	
+	public void addDateStart(String date3) {
+		WebElement elem = driver.findElement(dateStart);
+		elem.sendKeys(date3);
+	}
+	
+	public void addDateEnd(String date4) {
+		WebElement elem = driver.findElement(dateEnd);
+		elem.sendKeys(date4);
 	}
 	
 	public void clickSubmit() {
